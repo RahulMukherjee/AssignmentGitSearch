@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B708EEDA22D787BC00792DF8 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708EED822D787BC00792DF8 /* UserTableViewCell.swift */; };
+		B708EEDB22D787BC00792DF8 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B708EED922D787BC00792DF8 /* UserTableViewCell.xib */; };
 		B7D2A42122D705E900535833 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D2A42022D705E900535833 /* AppDelegate.swift */; };
 		B7D2A42322D705E900535833 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D2A42222D705E900535833 /* ViewController.swift */; };
 		B7D2A42622D705E900535833 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7D2A42422D705E900535833 /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B708EED822D787BC00792DF8 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		B708EED922D787BC00792DF8 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		B7D2A41D22D705E900535833 /* AssignmentGitSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AssignmentGitSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D2A42022D705E900535833 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7D2A42222D705E900535833 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 				B7D2A42722D705EA00535833 /* Assets.xcassets */,
 				B7D2A42922D705EA00535833 /* LaunchScreen.storyboard */,
 				B7D2A42C22D705EA00535833 /* Info.plist */,
+				B708EED822D787BC00792DF8 /* UserTableViewCell.swift */,
+				B708EED922D787BC00792DF8 /* UserTableViewCell.xib */,
 			);
 			path = AssignmentGitSearch;
 			sourceTree = "<group>";
@@ -177,6 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B708EEDB22D787BC00792DF8 /* UserTableViewCell.xib in Resources */,
 				B7D2A42B22D705EA00535833 /* LaunchScreen.storyboard in Resources */,
 				B7D2A42822D705EA00535833 /* Assets.xcassets in Resources */,
 				B7D2A42622D705E900535833 /* Main.storyboard in Resources */,
@@ -198,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7D2A42322D705E900535833 /* ViewController.swift in Sources */,
+				B708EEDA22D787BC00792DF8 /* UserTableViewCell.swift in Sources */,
 				B7D2A42122D705E900535833 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
