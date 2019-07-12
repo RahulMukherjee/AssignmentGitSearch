@@ -9,8 +9,14 @@
 /* Begin PBXBuildFile section */
 		B708EEDA22D787BC00792DF8 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708EED822D787BC00792DF8 /* UserTableViewCell.swift */; };
 		B708EEDB22D787BC00792DF8 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B708EED922D787BC00792DF8 /* UserTableViewCell.xib */; };
+		B708EEDD22D8647200792DF8 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708EEDC22D8647200792DF8 /* Models.swift */; };
+		B708EEDF22D8649A00792DF8 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708EEDE22D8649A00792DF8 /* SearchVC.swift */; };
+		B708EEE122D864AD00792DF8 /* UserDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708EEE022D864AD00792DF8 /* UserDetailVC.swift */; };
+		B708EEE322D864CD00792DF8 /* FollowersTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708EEE222D864CD00792DF8 /* FollowersTableVC.swift */; };
+		B708EEE622D8650D00792DF8 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708EEE522D8650D00792DF8 /* SearchViewModel.swift */; };
+		B708EEE822D8652000792DF8 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708EEE722D8652000792DF8 /* UserDetailViewModel.swift */; };
+		B708EEEA22D8652E00792DF8 /* FollowersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708EEE922D8652E00792DF8 /* FollowersViewModel.swift */; };
 		B7D2A42122D705E900535833 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D2A42022D705E900535833 /* AppDelegate.swift */; };
-		B7D2A42322D705E900535833 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D2A42222D705E900535833 /* ViewController.swift */; };
 		B7D2A42622D705E900535833 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7D2A42422D705E900535833 /* Main.storyboard */; };
 		B7D2A42822D705EA00535833 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7D2A42722D705EA00535833 /* Assets.xcassets */; };
 		B7D2A42B22D705EA00535833 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7D2A42922D705EA00535833 /* LaunchScreen.storyboard */; };
@@ -30,9 +36,15 @@
 /* Begin PBXFileReference section */
 		B708EED822D787BC00792DF8 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		B708EED922D787BC00792DF8 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		B708EEDC22D8647200792DF8 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		B708EEDE22D8649A00792DF8 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		B708EEE022D864AD00792DF8 /* UserDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailVC.swift; sourceTree = "<group>"; };
+		B708EEE222D864CD00792DF8 /* FollowersTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersTableVC.swift; sourceTree = "<group>"; };
+		B708EEE522D8650D00792DF8 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		B708EEE722D8652000792DF8 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
+		B708EEE922D8652E00792DF8 /* FollowersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersViewModel.swift; sourceTree = "<group>"; };
 		B7D2A41D22D705E900535833 /* AssignmentGitSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AssignmentGitSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D2A42022D705E900535833 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B7D2A42222D705E900535833 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B7D2A42522D705E900535833 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B7D2A42722D705EA00535833 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7D2A42A22D705EA00535833 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,6 +72,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B708EEE422D864EB00792DF8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B708EED822D787BC00792DF8 /* UserTableViewCell.swift */,
+				B708EED922D787BC00792DF8 /* UserTableViewCell.xib */,
+				B708EEDE22D8649A00792DF8 /* SearchVC.swift */,
+				B708EEE022D864AD00792DF8 /* UserDetailVC.swift */,
+				B708EEE222D864CD00792DF8 /* FollowersTableVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B708EEEB22D8653900792DF8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B708EEE522D8650D00792DF8 /* SearchViewModel.swift */,
+				B708EEE722D8652000792DF8 /* UserDetailViewModel.swift */,
+				B708EEE922D8652E00792DF8 /* FollowersViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B708EEEC22D8654600792DF8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B708EEDC22D8647200792DF8 /* Models.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B7D2A41422D705E800535833 = {
 			isa = PBXGroup;
 			children = (
@@ -82,13 +124,13 @@
 			isa = PBXGroup;
 			children = (
 				B7D2A42022D705E900535833 /* AppDelegate.swift */,
-				B7D2A42222D705E900535833 /* ViewController.swift */,
 				B7D2A42422D705E900535833 /* Main.storyboard */,
 				B7D2A42722D705EA00535833 /* Assets.xcassets */,
 				B7D2A42922D705EA00535833 /* LaunchScreen.storyboard */,
 				B7D2A42C22D705EA00535833 /* Info.plist */,
-				B708EED822D787BC00792DF8 /* UserTableViewCell.swift */,
-				B708EED922D787BC00792DF8 /* UserTableViewCell.xib */,
+				B708EEEC22D8654600792DF8 /* Model */,
+				B708EEE422D864EB00792DF8 /* View */,
+				B708EEEB22D8653900792DF8 /* ViewModel */,
 			);
 			path = AssignmentGitSearch;
 			sourceTree = "<group>";
@@ -204,9 +246,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7D2A42322D705E900535833 /* ViewController.swift in Sources */,
+				B708EEE822D8652000792DF8 /* UserDetailViewModel.swift in Sources */,
+				B708EEDF22D8649A00792DF8 /* SearchVC.swift in Sources */,
+				B708EEE622D8650D00792DF8 /* SearchViewModel.swift in Sources */,
+				B708EEEA22D8652E00792DF8 /* FollowersViewModel.swift in Sources */,
 				B708EEDA22D787BC00792DF8 /* UserTableViewCell.swift in Sources */,
 				B7D2A42122D705E900535833 /* AppDelegate.swift in Sources */,
+				B708EEE322D864CD00792DF8 /* FollowersTableVC.swift in Sources */,
+				B708EEE122D864AD00792DF8 /* UserDetailVC.swift in Sources */,
+				B708EEDD22D8647200792DF8 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
