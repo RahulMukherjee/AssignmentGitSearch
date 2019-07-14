@@ -16,6 +16,10 @@
 		B708EEE622D8650D00792DF8 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708EEE522D8650D00792DF8 /* SearchViewModel.swift */; };
 		B708EEE822D8652000792DF8 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708EEE722D8652000792DF8 /* UserDetailViewModel.swift */; };
 		B708EEEA22D8652E00792DF8 /* FollowersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708EEE922D8652E00792DF8 /* FollowersViewModel.swift */; };
+		B708EEEE22D8684300792DF8 /* GitServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708EEED22D8684300792DF8 /* GitServices.swift */; };
+		B708EEF122D8686100792DF8 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708EEF022D8686100792DF8 /* Utility.swift */; };
+		B708EEF522D8890100792DF8 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708EEF422D8890100792DF8 /* Errors.swift */; };
+		B708EEF722DAFE8100792DF8 /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708EEF622DAFE8100792DF8 /* UserCellViewModel.swift */; };
 		B7D2A42122D705E900535833 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D2A42022D705E900535833 /* AppDelegate.swift */; };
 		B7D2A42622D705E900535833 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7D2A42422D705E900535833 /* Main.storyboard */; };
 		B7D2A42822D705EA00535833 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7D2A42722D705EA00535833 /* Assets.xcassets */; };
@@ -43,6 +47,10 @@
 		B708EEE522D8650D00792DF8 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		B708EEE722D8652000792DF8 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
 		B708EEE922D8652E00792DF8 /* FollowersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersViewModel.swift; sourceTree = "<group>"; };
+		B708EEED22D8684300792DF8 /* GitServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitServices.swift; sourceTree = "<group>"; };
+		B708EEF022D8686100792DF8 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		B708EEF422D8890100792DF8 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		B708EEF622DAFE8100792DF8 /* UserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
 		B7D2A41D22D705E900535833 /* AssignmentGitSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AssignmentGitSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D2A42022D705E900535833 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7D2A42522D705E900535833 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,6 +98,7 @@
 				B708EEE522D8650D00792DF8 /* SearchViewModel.swift */,
 				B708EEE722D8652000792DF8 /* UserDetailViewModel.swift */,
 				B708EEE922D8652E00792DF8 /* FollowersViewModel.swift */,
+				B708EEF622DAFE8100792DF8 /* UserCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -100,6 +109,16 @@
 				B708EEDC22D8647200792DF8 /* Models.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B708EEEF22D8684D00792DF8 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				B708EEED22D8684300792DF8 /* GitServices.swift */,
+				B708EEF022D8686100792DF8 /* Utility.swift */,
+				B708EEF422D8890100792DF8 /* Errors.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		B7D2A41422D705E800535833 = {
@@ -131,6 +150,7 @@
 				B708EEEC22D8654600792DF8 /* Model */,
 				B708EEE422D864EB00792DF8 /* View */,
 				B708EEEB22D8653900792DF8 /* ViewModel */,
+				B708EEEF22D8684D00792DF8 /* Utility */,
 			);
 			path = AssignmentGitSearch;
 			sourceTree = "<group>";
@@ -248,10 +268,14 @@
 			files = (
 				B708EEE822D8652000792DF8 /* UserDetailViewModel.swift in Sources */,
 				B708EEDF22D8649A00792DF8 /* SearchVC.swift in Sources */,
+				B708EEF722DAFE8100792DF8 /* UserCellViewModel.swift in Sources */,
 				B708EEE622D8650D00792DF8 /* SearchViewModel.swift in Sources */,
+				B708EEF122D8686100792DF8 /* Utility.swift in Sources */,
+				B708EEF522D8890100792DF8 /* Errors.swift in Sources */,
 				B708EEEA22D8652E00792DF8 /* FollowersViewModel.swift in Sources */,
 				B708EEDA22D787BC00792DF8 /* UserTableViewCell.swift in Sources */,
 				B7D2A42122D705E900535833 /* AppDelegate.swift in Sources */,
+				B708EEEE22D8684300792DF8 /* GitServices.swift in Sources */,
 				B708EEE322D864CD00792DF8 /* FollowersTableVC.swift in Sources */,
 				B708EEE122D864AD00792DF8 /* UserDetailVC.swift in Sources */,
 				B708EEDD22D8647200792DF8 /* Models.swift in Sources */,

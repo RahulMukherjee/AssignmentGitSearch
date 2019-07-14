@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="110" id="KGk-i7-Jjw" customClass="UserTableViewCell" customModule="AssignmentGitSearch" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserTableViewCell" rowHeight="110" id="KGk-i7-Jjw" customClass="UserTableViewCell" customModule="AssignmentGitSearch" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="114"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -20,14 +20,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mq9-eQ-ueZ">
-                        <rect key="frame" x="15" y="37" width="290" height="40"/>
+                        <rect key="frame" x="25" y="30" width="280" height="40"/>
                         <color key="backgroundColor" red="1" green="0.11257191917139697" blue="0.47042304184394246" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="fqZ-oy-xFT"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipt-ak-yeC">
-                        <rect key="frame" x="105" y="46.5" width="185" height="21"/>
+                        <rect key="frame" x="105" y="39.5" width="185" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="tla-bD-mwg"/>
                         </constraints>
@@ -36,7 +36,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userPlace" translatesAutoresizingMaskIntoConstraints="NO" id="z8b-wS-hs3">
-                        <rect key="frame" x="15" y="17" width="80" height="80"/>
+                        <rect key="frame" x="15" y="10" width="80" height="80"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="80" id="NBK-Vf-Ftq"/>
                             <constraint firstAttribute="width" constant="80" id="k3S-iV-sAI"/>
@@ -47,15 +47,22 @@
                 <constraints>
                     <constraint firstItem="mq9-eQ-ueZ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="AUY-et-CsB"/>
                     <constraint firstItem="ipt-ak-yeC" firstAttribute="leading" secondItem="z8b-wS-hs3" secondAttribute="trailing" constant="10" id="Bw9-Ex-BN7"/>
+                    <constraint firstItem="z8b-wS-hs3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="KHI-eM-4Wz"/>
                     <constraint firstItem="z8b-wS-hs3" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="LFQ-fP-Cid"/>
                     <constraint firstItem="ipt-ak-yeC" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ioT-mp-3CR"/>
-                    <constraint firstItem="mq9-eQ-ueZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="rpB-gI-cBm"/>
+                    <constraint firstItem="mq9-eQ-ueZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="rpB-gI-cBm"/>
                     <constraint firstItem="z8b-wS-hs3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="rrl-gX-MHW"/>
+                    <constraint firstAttribute="bottom" secondItem="z8b-wS-hs3" secondAttribute="bottom" constant="10" id="v7A-84-u4p"/>
                     <constraint firstAttribute="trailing" secondItem="mq9-eQ-ueZ" secondAttribute="trailing" constant="15" id="wZj-Qi-UUQ"/>
                     <constraint firstAttribute="trailing" secondItem="ipt-ak-yeC" secondAttribute="trailing" constant="30" id="wzN-nm-WZB"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imgUser" destination="z8b-wS-hs3" id="VGN-6H-sO3"/>
+                <outlet property="lblName" destination="ipt-ak-yeC" id="c6w-eo-gir"/>
+                <outlet property="viewLbl" destination="mq9-eQ-ueZ" id="2F0-ng-wBf"/>
+            </connections>
             <point key="canvasLocation" x="123.18840579710145" y="7.3660714285714279"/>
         </tableViewCell>
     </objects>
