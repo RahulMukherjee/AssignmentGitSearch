@@ -11,6 +11,7 @@ import UIKit
 class SearchVC: UIViewController {
 
     private var viewModel: SearchViewModel?
+    @IBOutlet weak var lblNoSearch: UILabel!
     @IBOutlet weak var searchTableView: UITableView!
     @IBOutlet weak var activity: UIActivityIndicatorView!
     override func viewDidLoad() {
@@ -20,6 +21,8 @@ class SearchVC: UIViewController {
         self.registerTableViewCell()
         self.searchTableView.rowHeight = UITableView.automaticDimension
         self.searchTableView.estimatedRowHeight = 44.0
+        self.showHideLblNoSearch()
+        self.activity.stopAnimating()
     }
     
     private func registerCallback() {
@@ -27,8 +30,18 @@ class SearchVC: UIViewController {
         viewModel.didUpdate = { [weak self] _ in
             DispatchQueue.main.async {
                 self?.searchTableView.reloadData()
+                self?.showHideLblNoSearch()
+                self?.activity.stopAnimating()
             }
         }
+    }
+    
+    private func showHideLblNoSearch() {
+        if let viewModel = viewModel, viewModel.numberOfRows() == 0 {
+            self.lblNoSearch.isHidden = false
+            return
+        }
+        self.lblNoSearch.isHidden = true
     }
     
     private func registerTableViewCell() {
@@ -41,6 +54,10 @@ extension SearchVC: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.view.endEditing(true)
         guard let searchText = searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
+        DispatchQueue.main.async {
+            self.activity.startAnimating()
+            self.lblNoSearch.isHidden = true
+        }
         GitServices.shared.fetchLogin(login: searchText) { (search, error) in
             guard error == nil, let search = search else { return }
             print("recieved object search - \(search)")
@@ -50,11 +67,16 @@ extension SearchVC: UISearchBarDelegate {
         }
     }
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        if let viewModel = viewModel  {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "", let viewModel = viewModel {
+            DispatchQueue.main.async {
+                self.view.endEditing(true)
+                self.activity.startAnimating()
+            }
             viewModel.clearSearch()
         }
     }
+    
 }
 
 extension SearchVC: UITableViewDataSource {

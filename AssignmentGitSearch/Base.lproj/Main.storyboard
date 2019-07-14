@@ -18,10 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="M8Z-ZA-3fH">
-                                <rect key="frame" x="197" y="394" width="20" height="20"/>
-                            </activityIndicatorView>
-                            <searchBar contentMode="redraw" placeholder="Search for Username" translatesAutoresizingMaskIntoConstraints="NO" id="eqb-y1-5VI">
+                            <searchBar contentMode="redraw" barStyle="black" placeholder="Search for Username" translatesAutoresizingMaskIntoConstraints="NO" id="eqb-y1-5VI">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                 <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -37,14 +34,25 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="gAh-Gf-E5B"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Result: Search for user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acU-eg-bH5">
+                                <rect key="frame" x="107" y="393.5" width="200" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="M8Z-ZA-3fH">
+                                <rect key="frame" x="188.5" y="385.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vv0-9Q-kKv" secondAttribute="trailing" id="2AX-Rz-j0G"/>
                             <constraint firstItem="eqb-y1-5VI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6Fq-G0-OGK"/>
                             <constraint firstItem="eqb-y1-5VI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7NK-TN-pKk"/>
+                            <constraint firstItem="acU-eg-bH5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Jks-0h-9pm"/>
                             <constraint firstItem="M8Z-ZA-3fH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MTR-kT-WxC"/>
                             <constraint firstItem="M8Z-ZA-3fH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="be5-VJ-cvy"/>
+                            <constraint firstItem="acU-eg-bH5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tDN-Fw-lAU"/>
                             <constraint firstItem="Vv0-9Q-kKv" firstAttribute="top" secondItem="eqb-y1-5VI" secondAttribute="bottom" id="wZ8-bD-vGt"/>
                             <constraint firstItem="eqb-y1-5VI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="z8V-5m-wO1"/>
                             <constraint firstItem="Vv0-9Q-kKv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zCy-Kb-hfJ"/>
@@ -61,6 +69,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activity" destination="M8Z-ZA-3fH" id="Luf-XP-SFu"/>
+                        <outlet property="lblNoSearch" destination="acU-eg-bH5" id="Jzd-68-7LR"/>
                         <outlet property="searchTableView" destination="Vv0-9Q-kKv" id="hfP-bM-OOw"/>
                         <segue destination="Jbq-yI-Kca" kind="show" id="mak-Kg-raA"/>
                     </connections>

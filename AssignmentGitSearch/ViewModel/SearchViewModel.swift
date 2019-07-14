@@ -46,6 +46,7 @@ class SearchViewModel {
     public func clearSearch() {
         self.searchText = nil
         rows = [Row]()
+        self.didUpdate?(self)
     }
     
     public func nextPage() {
