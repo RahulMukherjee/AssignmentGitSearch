@@ -22,7 +22,8 @@ class SearchViewModel {
     }
     
     public func search(searchText: String) {
-        self.clearSearch()
+        self.currentPage = 1
+        rows = [Row]()
         self.searchText = searchText
         self.buildData()
     }
