@@ -14,6 +14,7 @@ class FollowersViewModel {
     
     //closure to be register by View Controller
     var didUpdate: ((FollowersViewModel)->Void)?
+    var errorOccured: ((Error?)->Void)?
     
     init(login: String) {
         self.login = login
@@ -40,7 +41,10 @@ extension FollowersViewModel {
         rows = [Row]()
         if let login = login {
             GitServices.shared.fetchFollowers(login: login) { (searchedUser, error) in
-                guard error == nil, let searchedUser = searchedUser else { return }
+                guard error == nil, let searchedUser = searchedUser else {
+                    self.errorOccured?(error)
+                    return
+                }
                 self.rows = searchedUser
                 self.didUpdate?(self)
             }

@@ -16,6 +16,7 @@ class SearchViewModel {
     
     //closure to be register by View Controller
     var didUpdate: ((SearchViewModel)->Void)?
+    var errorOccured: ((Error?)->Void)?
     
     init() {
         self.buildData()
@@ -84,7 +85,10 @@ extension SearchViewModel {
         }
         guard let searchText = searchText else { return }
         GitServices.shared.fetchLogin(login: searchText, page: "\(currentPage)") { (search, error) in
-            guard error == nil, let search = search else { return }
+            guard error == nil, let search = search else {
+                self.errorOccured?(error)
+                return
+            }
             self.rows.append(contentsOf: search.items)
             self.totalCount = search.totalCount
             self.currentPage += 1

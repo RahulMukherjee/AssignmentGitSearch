@@ -13,6 +13,7 @@ class UserDetailViewModel {
     private var user: User?
     public var userDataAvailable:((UserDetailViewModel)->Void)?
     public var userImageData:((Data)->Void)?
+    var errorOccured: ((Error?)->Void)?
     
     public var followersUrl: URL? {
         if let user = user {
@@ -88,7 +89,10 @@ extension UserDetailViewModel {
         }
         guard let url = URL(string: user.avatarUrl) else { return }
         GitServices.shared.getImageData(url: url) { (data, response, error) in
-            guard let imageData = data, error == nil else { return }
+            guard let imageData = data, error == nil else {
+                self.errorOccured?(error)
+                return
+            }
             self.userImageData?(imageData)
         }
     }

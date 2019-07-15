@@ -36,6 +36,14 @@ class SearchVC: UIViewController {
                 self.activity.stopAnimating()
             }
         }
+        viewModel.errorOccured = { [weak self] error in
+            guard let self = self, error != nil else { return }
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: "Error", message: "Some issue occured while fetching data", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
     }
     
     private func showHideLblNoSearch() {
