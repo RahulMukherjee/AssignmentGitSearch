@@ -33,6 +33,7 @@ class UserTableViewCell: UITableViewCell {
         self.imgUser.layer.borderColor = UIColor.red.cgColor
         self.imgUser.layer.borderWidth = 1.0
         self.imgUser.layer.masksToBounds = true
+        self.imgUser.image = UIImage(named: "userPlace")
         self.processImage()
     }
     

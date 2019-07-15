@@ -24,7 +24,7 @@ struct SearchedUser: Codable, Row {
 struct User: Codable, Row {
     var login: String
     var id: Int
-    var avatarUrl: String?
+    var avatarUrl: String
     var followersUrl: String
     var name: String
     var location: String?

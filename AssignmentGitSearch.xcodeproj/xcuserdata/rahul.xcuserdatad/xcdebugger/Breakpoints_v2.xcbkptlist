@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AssignmentGitSearch/View/SearchVC.swift"
-            timestampString = "584804404.036086"
+            filePath = "AssignmentGitSearch/ViewModel/SearchViewModel.swift"
+            timestampString = "584875900.358291"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "registerCallback()"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "isLoadingCell(for:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AssignmentGitSearch/View/SearchVC.swift"
-            timestampString = "584804404.0364521"
+            filePath = "AssignmentGitSearch/ViewModel/FollowersViewModel.swift"
+            timestampString = "584875437.792423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "showHideLblNoSearch()"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "buildData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AssignmentGitSearch/ViewModel/FollowersViewModel.swift"
+            timestampString = "584875449.3180799"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "buildData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AssignmentGitSearch/Utility/GitServices.swift"
+            timestampString = "584875900.358451"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "fetchFollowers(login:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

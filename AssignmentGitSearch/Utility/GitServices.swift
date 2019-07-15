@@ -19,6 +19,7 @@ class GitServices {
     private var searchEndpoint = "search/users"
     // https://api.github.com/users/<username>
     private var userEndpoint = "users/"
+    
     //Folower Endpoint "users/torvalds/followers "
     
     public func fetchLogin(login: String,page: String = "1",completion: @escaping (_:Search?,_:Error?)->Void) {
@@ -49,6 +50,59 @@ class GitServices {
             }
         })
         dataTask?.resume()
+    }
+    
+    ///Fetch user info
+    public func fetchUser(login: String,completion: @escaping (_:User?,_:Error?)->Void) {
+        //Cancel existing url request as it is for swarch so may be user can search for name very frequently
+        dataTask?.cancel()
+       
+        guard let url = URL(string: baseURL+userEndpoint+login) else {
+            completion(nil,GITServicesError.invalidURL)
+            return
+        }
+        
+        let userDataTask = defaultSession.dataTask(with: url, completionHandler: { (data, urlResponse, error) in
+            guard error == nil, let data = data,let urlResponse = urlResponse as? HTTPURLResponse, urlResponse.statusCode == 200 else {
+                completion(nil,GITServicesError.unknownError("Error in data recieving"))
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let user = try decoder.decode(User.self, from: data)
+                completion(user,nil)
+            } catch let decodeError {
+                completion(nil,decodeError)
+            }
+        })
+        userDataTask.resume()
+    }
+    
+    ///Fetch Followers
+    public func fetchFollowers(login: String,completion: @escaping (_:[SearchedUser]?,_:Error?)->Void) {
+        //Cancel existing url request as it is for swarch so may be user can search for name very frequently
+        dataTask?.cancel()
+        guard let url = URL(string: baseURL+userEndpoint+login+"/followers") else {
+            completion(nil,GITServicesError.invalidURL)
+            return
+        }
+        
+        let followerDataTask = defaultSession.dataTask(with: url, completionHandler: { (data, urlResponse, error) in
+            guard error == nil, let data = data,let urlResponse = urlResponse as? HTTPURLResponse, urlResponse.statusCode == 200 else {
+                completion(nil,GITServicesError.unknownError("Error in data recieving"))
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let followers = try decoder.decode([SearchedUser].self, from: data)
+                completion(followers,nil)
+            } catch let decodeError {
+                completion(nil,decodeError)
+            }
+        })
+        followerDataTask.resume()
     }
     
     ///Fetch imageData from URL

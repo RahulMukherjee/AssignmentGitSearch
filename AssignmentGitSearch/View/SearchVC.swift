@@ -23,15 +23,17 @@ class SearchVC: UIViewController {
         self.searchTableView.estimatedRowHeight = 44.0
         self.showHideLblNoSearch()
         self.activity.stopAnimating()
+        self.searchTableView.prefetchDataSource = self
     }
     
     private func registerCallback() {
         guard let viewModel = viewModel else { return }
         viewModel.didUpdate = { [weak self] _ in
+            guard let self = self else { return }
             DispatchQueue.main.async {
-                self?.searchTableView.reloadData()
-                self?.showHideLblNoSearch()
-                self?.activity.stopAnimating()
+                self.searchTableView.reloadData()
+                self.showHideLblNoSearch()
+                self.activity.stopAnimating()
             }
         }
     }
@@ -90,9 +92,30 @@ extension SearchVC: UITableViewDataSource {
         if let searchUser = viewModel.row(atIndex: indexPath) as? SearchedUser {
             if let cell = self.searchTableView.dequeueReusableCell(withIdentifier: UserTableViewCell.identifier, for: indexPath) as? UserTableViewCell {
                 cell.configure(searchedUser: searchUser)
+                cell.selectionStyle = .none
                 return cell
             }
         }
         return UITableViewCell()
+    }
+}
+
+extension SearchVC: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+         guard let viewModel = viewModel else { return }
+        if indexPaths.contains(where: viewModel.isLoadingCell) {
+            viewModel.nextPage()
+        }
+    }
+    
+    
+}
+
+extension SearchVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let userDetail = self.storyboard?.instantiateViewController(withIdentifier: "UserDetailVC") as? UserDetailVC, let viewModel = viewModel, let login = viewModel.login(for: indexPath) {
+            userDetail.login = login
+            self.navigationController?.pushViewController(userDetail, animated: true)
+        }
     }
 }
