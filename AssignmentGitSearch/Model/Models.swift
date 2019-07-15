@@ -33,7 +33,3 @@ struct User: Codable, Row {
     var followers: Int?
     var updatedAt: String
 }
-
-struct NextLoading: Row {
-    var currentPage: Int = 1
-}

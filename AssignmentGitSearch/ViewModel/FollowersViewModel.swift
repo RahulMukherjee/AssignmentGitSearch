@@ -11,6 +11,7 @@ import Foundation
 class FollowersViewModel {
     private(set) var rows = [Row]()
     var login: String?
+    
     //closure to be register by View Controller
     var didUpdate: ((FollowersViewModel)->Void)?
     

@@ -21,6 +21,7 @@ class UserDetailViewModel {
         return nil
     }
     
+    ///Download user image data
     public func downloadUserImage() {
         self.downloadImage()
     }

@@ -21,6 +21,7 @@ class SearchViewModel {
         self.buildData()
     }
     
+    /// Call to search function to search for git user. Each time search call, fresh data get generated
     public func search(searchText: String) {
         self.currentPage = 1
         rows = [Row]()
@@ -28,7 +29,7 @@ class SearchViewModel {
         self.buildData()
     }
     
-    ///get the Row against indexpath
+    ///Get the Row against indexpath
     public func row(atIndex indexpath: IndexPath) -> Row? {
         if indexpath.row < rows.count {
             return rows[indexpath.row]
@@ -46,6 +47,7 @@ class SearchViewModel {
         self.buildData()
     }
     
+    ///Clear search data
     public func clearSearch() {
         self.currentPage = 1
         self.searchText = nil
@@ -53,6 +55,7 @@ class SearchViewModel {
         self.didUpdate?(self)
     }
     
+    ///Prefetch/Fetch next page data
     public func nextPage() {
         guard self.numberOfRows() < totalCount else { return }
         self.buildData()
@@ -65,15 +68,11 @@ class SearchViewModel {
         return nil
     }
     
-    
+    ///Return if it is loading cell, i.e last cell
     func isLoadingCell(for indexPath: IndexPath) -> Bool {
         return indexPath.row >= self.numberOfRows() - 1
     }
     
-//    func visibleIndexPathsToReload(intersecting indexPaths: [IndexPath],indexPathsForVisibleRows: [IndexPath] = []) -> [IndexPath] {
-//        let indexPathsIntersection = Set(indexPathsForVisibleRows).intersection(indexPaths)
-//        return Array(indexPathsIntersection)
-//    }
 }
 
 

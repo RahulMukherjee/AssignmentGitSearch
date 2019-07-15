@@ -83,8 +83,7 @@
 		B708EEE422D864EB00792DF8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B708EED822D787BC00792DF8 /* UserTableViewCell.swift */,
-				B708EED922D787BC00792DF8 /* UserTableViewCell.xib */,
+				B7E136F822DCB28800AF1203 /* Cell */,
 				B708EEDE22D8649A00792DF8 /* SearchVC.swift */,
 				B708EEE022D864AD00792DF8 /* UserDetailVC.swift */,
 				B708EEE222D864CD00792DF8 /* FollowersTableVC.swift */,
@@ -162,6 +161,15 @@
 				B7D2A43722D705EB00535833 /* Info.plist */,
 			);
 			path = AssignmentGitSearchTests;
+			sourceTree = "<group>";
+		};
+		B7E136F822DCB28800AF1203 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B708EED822D787BC00792DF8 /* UserTableViewCell.swift */,
+				B708EED922D787BC00792DF8 /* UserTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

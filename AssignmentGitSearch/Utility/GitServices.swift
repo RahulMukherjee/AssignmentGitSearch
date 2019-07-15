@@ -14,13 +14,8 @@ class GitServices {
     var dataTask: URLSessionDataTask?
     
     private var baseURL = "https://api.github.com/"
-    
-    //"https://api.github.com/search/users?q=torvalds&page=1"
     private var searchEndpoint = "search/users"
-    // https://api.github.com/users/<username>
     private var userEndpoint = "users/"
-    
-    //Folower Endpoint "users/torvalds/followers "
     
     public func fetchLogin(login: String,page: String = "1",completion: @escaping (_:Search?,_:Error?)->Void) {
         //Cancel existing url request as it is for swarch so may be user can search for name very frequently
